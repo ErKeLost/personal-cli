@@ -15,10 +15,12 @@
     }
   },
   "scripts": {
+    "dev": "tsc -w"
   },
   "devDependencies": {
     "@farmfe/core": "^1.0.12",
-    "citty": "^0.1.6"
+    "citty": "^0.1.6",
+    "typescript": "^5.4.3"
   },
   "keywords": [],
   "author": "",

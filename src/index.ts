@@ -33,16 +33,16 @@ const main = defineCommand({
       return
     }
 
-    const { configPath } = parseArgs(ctx.args)
+    // const { configPath } = parseArgs(ctx.args)
 
-    const config = await loadConfig(configPath)
+    // const config = await loadConfig(configPath)
 
-    if (!config) {
-      consola.error(`No configuration found at ${configPath}`)
-      process.exit(1)
-    }
+    // if (!config) {
+    //   consola.error(`No configuration found at ${configPath}`)
+    //   process.exit(1)
+    // }
 
-    await bundle(config)
+    // await bundle(config)
   },
   setup() {
     console.log("Setup");
@@ -53,6 +53,7 @@ const main = defineCommand({
   subCommands: {
     start: () => import("./commands/start").then((r) => r.default),
     build: () => import("./commands/build").then((r) => r.default),
+    watch: () => import("./commands/watch").then((r) => r.default),
     preview: () => import("./commands/preview").then((r) => r.default),
     clean: () => import("./commands/clean").then((r) => r.default),
   },
