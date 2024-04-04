@@ -18,12 +18,10 @@ export default defineCommand({
     hmr: {
       type: "boolean",
       description: "disable hot module replacement",
-      default: true,
     },
     workDir: {
       type: "string",
       description: "working directory",
-      required: true,
     },
     entry: {
       type: "positional",
@@ -31,7 +29,6 @@ export default defineCommand({
     },
     dst: {
       type: "positional",
-      required: false,
       description: "path to output directory",
       default: ".output",
     },

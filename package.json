@@ -1,11 +1,12 @@
 {
   "name": "personal-next-cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "Unlock innovative potential: Farm core API takes you to create personalized building tools",
+  "type": "module",
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "bin": {
-    "next": "./bin/cli.js"
+    "next": "./bin/cli.mjs"
   },
   "exports": {
     ".": {

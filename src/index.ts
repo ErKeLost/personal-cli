@@ -1,26 +1,16 @@
-import process from 'node:process'
-import nodePath from 'node:path'
+import fs from 'node:fs'
 import { defineCommand, runMain, showUsage } from 'citty'
 import { start, build, preview, clean } from '@farmfe/core'
 
-import {
-  version,
-  description,
-} from '../package.json' assert { type: 'json' }
-
+const packageJsonFile = fs.readFileSync('./package.json', 'utf8');
+const { version, description } = packageJsonFile as any;
 const main = defineCommand({
   meta: {
-    name: 'rolldown',
+    name: 'next-personal-cli',
     version,
     description,
   },
   args: {
-    config: {
-      type: 'string',
-      alias: 'c',
-      description:
-        'Use this config file (if argument is used but value is unspecified, defaults to rolldown.config.js)',
-    },
     help: {
       type: 'boolean',
       alias: 'h',
@@ -28,6 +18,8 @@ const main = defineCommand({
     },
   },
   async run(ctx) {
+    console.log(ctx.args);
+    
     if (ctx.args.help) {
       await showUsage(ctx.cmd)
       return
@@ -51,11 +43,11 @@ const main = defineCommand({
     console.log("Cleanup");
   },
   subCommands: {
-    start: () => import("./commands/start").then((r) => r.default),
-    build: () => import("./commands/build").then((r) => r.default),
-    watch: () => import("./commands/watch").then((r) => r.default),
-    preview: () => import("./commands/preview").then((r) => r.default),
-    clean: () => import("./commands/clean").then((r) => r.default),
+    start: () => import("./commands/start.js").then((r) => r.default),
+    build: () => import("./commands/build.js").then((r) => r.default),
+    watch: () => import("./commands/watch.js").then((r) => r.default),
+    preview: () => import("./commands/preview.js").then((r) => r.default),
+    clean: () => import("./commands/clean.js").then((r) => r.default),
   },
 });
 

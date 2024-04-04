@@ -2,7 +2,7 @@
   "compilerOptions": {
     "noImplicitAny": true,
     "sourceMap": true,
-    "target": "es2020",
+    "target": "esnext",
     "inlineSources": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
