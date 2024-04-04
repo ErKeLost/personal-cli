@@ -11,6 +11,27 @@ const main = defineCommand({
     description,
   },
   args: {
+    config: {
+      type: 'string',
+      alias: 'c',
+      description:
+        'Use this config file (if argument is used but value is unspecified, defaults to farm.config.ts)',
+    },
+    mode: {
+      type: 'string',
+      alias: 'm',
+      description: 'Set env mode',
+      default: 'development',
+    },
+    base: {
+      type: 'string',
+      description: 'Public base path',
+    },
+    clearScreen: {
+      type: 'boolean',
+      description: 'Allow/disable clear screen when logging',
+      default: true,
+    },
     help: {
       type: 'boolean',
       alias: 'h',
