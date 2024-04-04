@@ -2,7 +2,7 @@ import { defineCommand } from "citty";
 export default defineCommand({
   meta: {
     name: "start",
-    description: "Build the project from current directory",
+    description: "Compile the project in dev mode and serve it with dev server",
   },
   args: {
     prod: {
