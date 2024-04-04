@@ -44,8 +44,6 @@ const main = defineCommand({
 
     await bundle(config)
   },
-})
-
   setup() {
     console.log("Setup");
   },
