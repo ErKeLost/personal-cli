@@ -37,7 +37,7 @@ export default defineCommand({
     },
   },
   run({ args }) {
-    consola.log("Build");
-    consola.log("Parsed args:", args);
+    console.log("Build");
+    console.log("Parsed args:", args);
   },
 });
