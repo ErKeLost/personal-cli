@@ -1,6 +1,7 @@
 import { defineCommand } from "citty";
 import { preview } from "@farmfe/core";
-import { previewArgs as args } from "../args";
+import { previewArgs as args } from "../args.js";
+import { getConfigPath, resolveCommandOptions } from "../utils.js";
 
 export default defineCommand({
   meta: {
@@ -9,8 +10,15 @@ export default defineCommand({
   },
   args,
   run({ args }) {
-    console.log("Build");
-    console.log("Parsed args:", args);
-    preview({})
+    const configPath = getConfigPath(args.config);
+    const resolveOptions = resolveCommandOptions(args);
+    const defaultOptions = {
+      mode: args.mode,
+      server: resolveOptions,
+      configPath,
+      port: args.port
+    };
+
+    preview(defaultOptions)
   },
 });

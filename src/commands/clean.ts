@@ -1,6 +1,6 @@
 import { defineCommand } from "citty";
 import { clean } from "@farmfe/core";
-import { cleanArgs as args } from "../args";
+import { cleanArgs as args } from "../args.js";
 
 export default defineCommand({
   meta: {
@@ -9,8 +9,6 @@ export default defineCommand({
   },
   args,
   run({ args }) {
-    console.log("Build");
-    console.log("Parsed args:", args);
-    clean("", false)
+    clean(process.cwd(), args?.recursive)
   },
 });

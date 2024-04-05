@@ -1,6 +1,7 @@
 import { defineCommand } from "citty";
 import { build } from '@farmfe/core'
-import { buildArgs as args } from "../args";
+import { buildArgs as args } from "../args.js";
+import { getConfigPath } from "../utils.js";
 export default defineCommand({
   meta: {
     name: "build",
@@ -8,7 +9,25 @@ export default defineCommand({
   },
   args,
   run({ args }) {
-    console.log("Parsed args:", args);
-    build({})
+    const configPath = getConfigPath(args.config);
+    const defaultOptions = {
+      compilation: {
+        watch: args.watch,
+        output: {
+          path: args?.outDir,
+          targetEnv: args?.target,
+          format: args?.format
+        },
+        input: {
+          index: args?.input
+        },
+        sourcemap: args.sourcemap,
+        minify: args.minify,
+        treeShaking: args.treeShaking
+      },
+      mode: args.mode,
+      configPath
+    };
+    build(defaultOptions)
   },
 });

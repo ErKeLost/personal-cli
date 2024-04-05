@@ -1,6 +1,4 @@
-import { ArgsDef } from "citty"
-
-export const args: ArgsDef = {
+export const args: any = {
   config: {
     type: 'string',
     alias: 'c',
@@ -29,18 +27,19 @@ export const args: ArgsDef = {
   },
 }
 
-export const startArgs: ArgsDef = {
+export const startArgs: any = {
+  ...args,
   lazy: {
     type: "boolean",
     description: "lazyCompilation",
     alias: "l",
   },
   host: {
-    type: "string",
+    type: "number",
     description: "specify host",
   },
   port: {
-    type: "string",
+    type: "number",
     description: "specify port",
   },
   open: {
@@ -61,7 +60,8 @@ export const startArgs: ArgsDef = {
   }
 }
 
-export const watchArgs: ArgsDef = {
+export const watchArgs: any = {
+  ...args,
   outDir: {
     type: 'string',
     alias: 'o',
@@ -96,7 +96,8 @@ export const watchArgs: ArgsDef = {
   },
 }
 
-export const buildArgs: ArgsDef = {
+export const buildArgs: any = {
+  ...args,
   ...watchArgs,
   watch: {
     type: 'boolean',
@@ -105,7 +106,8 @@ export const buildArgs: ArgsDef = {
   },
 }
 
-export const previewArgs: ArgsDef = {
+export const previewArgs: any = {
+  ...args,
   port: {
     type: 'string',
     description: 'specify port',
@@ -116,8 +118,8 @@ export const previewArgs: ArgsDef = {
   },
 }
 
-
-export const cleanArgs: ArgsDef = {
+export const cleanArgs: any = {
+  ...args,
   recursive: {
     type: 'boolean',
     alias: 'r',
@@ -125,4 +127,5 @@ export const cleanArgs: ArgsDef = {
   }
 }
 
-export const createArgs: ArgsDef = {}
+export const createArgs: any = {
+}

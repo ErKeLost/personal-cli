@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import {  defineCommand, runMain, showUsage } from 'citty'
-import { args } from './args'
+import { args } from './args.js'
 
 const packageJsonFile = fs.readFileSync('./package.json', 'utf8');
 const { version, description } = packageJsonFile as any;
