@@ -3,17 +3,8 @@
   "version": "1.0.0",
   "description": "Unlock innovative potential: Farm core API takes you to create personalized building tools",
   "type": "module",
-  "main": "./dist/index.cjs",
-  "types": "./dist/index.d.ts",
   "bin": {
     "next": "./bin/cli.mjs"
-  },
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs"
-    }
   },
   "scripts": {
     "dev": "tsc -w"
