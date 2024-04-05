@@ -1,40 +1,16 @@
 import { defineCommand } from "citty";
+import { watch } from '@farmfe/core'
+import { watchArgs as args } from "../args";
+
 export default defineCommand({
   meta: {
     name: "watch",
     description: "Watch file change and recompile",
   },
-  args: {
-    prod: {
-      type: "boolean",
-      description: "production mode",
-      alias: "p",
-    },
-    bundler: {
-      type: "string",
-      default: "rollup",
-      description: "bundler name",
-    },
-    hmr: {
-      type: "boolean",
-      description: "disable hot module replacement",
-    },
-    workDir: {
-      type: "string",
-      description: "working directory",
-    },
-    entry: {
-      type: "positional",
-      description: "path to entrypoint",
-    },
-    dst: {
-      type: "positional",
-      description: "path to output directory",
-      default: ".output",
-    },
-  },
+  args,
   run({ args }) {
     console.log("Build");
     console.log("Parsed args:", args);
+    watch({})
   },
 });
