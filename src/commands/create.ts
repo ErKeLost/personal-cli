@@ -12,7 +12,7 @@ export default defineCommand({
   },
   args,
   run({ args }) {
-
+    createFarm(args)
   },
 });
 
@@ -117,4 +117,6 @@ async function createFarm(args: any) {
     projectName: targetDir,
     packageManager
   });
+
+  console.log(colors.green('📦 Template copied Successfully!'));
 }

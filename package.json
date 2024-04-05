@@ -18,6 +18,10 @@
   "scripts": {
     "dev": "tsc -w"
   },
+  "files": [
+    "dist",
+    "templates"
+  ],
   "devDependencies": {
     "@farmfe/core": "^1.0.12",
     "@farmfe/utils": "^0.0.1",

@@ -81,7 +81,7 @@ export async function copyTemplate(targetDir: string, options: any) {
   const dest = path.join(process.cwd(), targetDir);
   const templatePath = path.join(
     fileURLToPath(import.meta.url),
-    `../templates/${options.framework}`
+    `../../templates/${options.framework}`
   );
   copy(templatePath, dest);
 
