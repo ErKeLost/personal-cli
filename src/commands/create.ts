@@ -5,6 +5,15 @@ import colors from 'picocolors';
 import { startArgs as args } from "../args.js";
 import { copyTemplate, formatTargetDir, getConfigPath, isEmpty, pkgFromUserAgent, resolveCommandOptions, shouldUsePnpm, shouldUseYarn } from "../utils.js";
 
+interface IResultType {
+  packageName?: string;
+  projectName?: string;
+  framework?: string;
+  argFrameWork?: string;
+  autoInstall?: boolean;
+  packageManager?: string;
+}
+
 export default defineCommand({
   meta: {
     name: "create template",
@@ -15,16 +24,6 @@ export default defineCommand({
     createFarm(args)
   },
 });
-
-interface IResultType {
-  packageName?: string;
-  projectName?: string;
-  framework?: string;
-  argFrameWork?: string;
-  autoInstall?: boolean;
-  packageManager?: string;
-}
-
 
 async function createFarm(args: any) {
   const cwd = process.cwd();

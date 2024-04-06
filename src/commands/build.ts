@@ -10,6 +10,7 @@ export default defineCommand({
   args,
   run({ args }) {
     const configPath = getConfigPath(args.config);
+    
     const defaultOptions = {
       compilation: {
         watch: args.watch,
