@@ -22,7 +22,7 @@ devDependencies:
     version: 0.1.6
   picocolors:
     specifier: ^1.0.0
-    version: 1.0.0
+    version: 1.0.1
   prompts:
     specifier: ^2.4.2
     version: 2.4.2
@@ -1073,8 +1073,8 @@ packages:
       isarray: 0.0.1
     dev: true
 
-  /picocolors@1.0.0:
-    resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
+  /picocolors@1.0.1:
+    resolution: {integrity: sha512-anP1Z8qwhkbmu7MFP5iTt+wQKXgwzf7zTyGlcdzabySa9vd0Xt392U0rVmz9poOaBj0uHJKyyo9/upk0HrEQew==}
     dev: true
 
   /picomatch@2.3.1:
@@ -1256,7 +1256,7 @@ packages:
     dependencies:
       browserslist: 4.23.0
       escalade: 3.1.2
-      picocolors: 1.0.0
+      picocolors: 1.0.1
     dev: true
 
   /uuid@8.3.2:
